@@ -31,6 +31,9 @@ public class BJJBootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
     private List<Instructor> getInstructors(){
         List<Instructor> instructors = new ArrayList<>(1);
+        Instructor instructor = new Instructor("Joe Test", 2);
+
+
 
         return instructors;
     }

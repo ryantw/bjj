@@ -21,6 +21,17 @@ public class Instructor {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "instructor")
     private Set<Lesson> lessons = new HashSet<>();
 
+    public Instructor(String name, int yearsOfExperience) {
+        this.name = name;
+        this.yearsOfExperience = yearsOfExperience;
+    }
+
+    public Instructor(String name, int yearsOfExperience, Set<Student> studentSet) {
+        this.name = name;
+        this.yearsOfExperience = yearsOfExperience;
+        this.studentSet = studentSet;
+    }
+
     public Instructor(String name, int yearsOfExperience, Set<Student> studentSet, Set<Lesson> lessons) {
         this.name = name;
         this.yearsOfExperience = yearsOfExperience;
