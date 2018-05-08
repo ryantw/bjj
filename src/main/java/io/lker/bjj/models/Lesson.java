@@ -17,13 +17,13 @@ public class Lesson {
     private LessonNotes lessonNotes;
 
     @ManyToOne
-    private Instructor instructor;
+    private Student student;
 
-    public Lesson(int hours, Date date, LessonNotes lessonNotes, Instructor instructor) {
+    public Lesson(int hours, Date date, LessonNotes lessonNotes, Student student) {
         this.hours = hours;
         this.date = date;
         this.lessonNotes = lessonNotes;
-        this.instructor = instructor;
+        this.student = student;
     }
 
     public Long getId() {
@@ -58,11 +58,11 @@ public class Lesson {
         this.lessonNotes = lessonNotes;
     }
 
-    public Instructor getInstructor() {
-        return instructor;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setInstructor(Instructor instructor) {
-        this.instructor = instructor;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 }

@@ -1,6 +1,8 @@
 package io.lker.bjj.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Student {
@@ -12,6 +14,9 @@ public class Student {
     private String name;
 
     private int yearsOfExperience;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "student")
+    private Set<Lesson> lessons = new HashSet<>();
 
     @ManyToOne
     private Instructor instructor;

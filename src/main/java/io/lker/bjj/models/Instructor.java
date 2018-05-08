@@ -18,9 +18,6 @@ public class Instructor {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "instructor")
     private Set<Student> studentSet = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "instructor")
-    private Set<Lesson> lessons = new HashSet<>();
-
     public Instructor(String name, int yearsOfExperience) {
         this.name = name;
         this.yearsOfExperience = yearsOfExperience;
@@ -30,13 +27,6 @@ public class Instructor {
         this.name = name;
         this.yearsOfExperience = yearsOfExperience;
         this.studentSet = studentSet;
-    }
-
-    public Instructor(String name, int yearsOfExperience, Set<Student> studentSet, Set<Lesson> lessons) {
-        this.name = name;
-        this.yearsOfExperience = yearsOfExperience;
-        this.studentSet = studentSet;
-        this.lessons = lessons;
     }
 
     public int getId() {
@@ -71,11 +61,4 @@ public class Instructor {
         this.studentSet = studentSet;
     }
 
-    public Set<Lesson> getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(Set<Lesson> lessons) {
-        this.lessons = lessons;
-    }
 }
