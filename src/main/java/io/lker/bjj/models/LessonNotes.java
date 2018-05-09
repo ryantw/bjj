@@ -15,6 +15,10 @@ public class LessonNotes {
     @Lob
     private String notes;
 
+    public LessonNotes(){
+
+    }
+
     public LessonNotes(Lesson lesson, String notes) {
         this.lesson = lesson;
         this.notes = notes;

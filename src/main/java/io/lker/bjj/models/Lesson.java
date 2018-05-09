@@ -19,6 +19,10 @@ public class Lesson {
     @ManyToOne
     private Student student;
 
+    public Lesson(){
+
+    }
+
     public Lesson(int hours, Date date, LessonNotes lessonNotes, Student student) {
         this.hours = hours;
         this.date = date;

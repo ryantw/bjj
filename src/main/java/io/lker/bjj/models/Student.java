@@ -21,11 +21,10 @@ public class Student {
     @ManyToOne
     private Instructor instructor;
 
-    public Student(String name, int yearsOfExperience, Instructor instructor) {
-        this.name = name;
-        this.yearsOfExperience = yearsOfExperience;
-        this.instructor = instructor;
+    public Student() {
     }
+
+
 
     public Long getId() {
         return id;
@@ -57,5 +56,13 @@ public class Student {
 
     public void setInstructor(Instructor instructor) {
         this.instructor = instructor;
+    }
+
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public void setLessons(Lesson lesson) {
+        this.lessons.add(lesson);
     }
 }
