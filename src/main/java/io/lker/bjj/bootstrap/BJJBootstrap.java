@@ -1,9 +1,6 @@
 package io.lker.bjj.bootstrap;
 
-import io.lker.bjj.models.Instructor;
-import io.lker.bjj.models.Lesson;
-import io.lker.bjj.models.LessonNotes;
-import io.lker.bjj.models.Student;
+import io.lker.bjj.models.*;
 import io.lker.bjj.repositories.InstructorRepository;
 import io.lker.bjj.repositories.StudentRepository;
 import org.springframework.context.ApplicationListener;
@@ -54,6 +51,7 @@ public class BJJBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         student.setYearsOfExperience(5);
         student.setInstructor(null);
         student.setLessons(lessonOne);
+        student.setBeltRank(BeltRank.BLUE3);
         lessonOne.setStudent(student);
 
         Lesson lessonTwo = new Lesson();
@@ -68,11 +66,11 @@ public class BJJBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         student2.setYearsOfExperience(4);
         student2.setInstructor(null);
         student2.setLessons(lessonTwo);
+        student2.setBeltRank(BeltRank.WHITE4);
         lessonTwo.setStudent(student2);
 
-        student.setLessons(lessonTwo);
-        lessonTwo.setStudent(student);
-
+        //student.setLessons(lessonTwo);
+        //lessonTwo.setStudent(student);
 
         students.add(student);
         students.add(student2);

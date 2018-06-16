@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Students.</title>
+</head>
+<body>
+
+    <h1>Here is a list of current students.</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Experience (years)</th>
+                <th>Belt Rank</th>
+            </tr>
+        </thead>
+        <tbody th:if="${not #lists.isEmpty(students)}">
+            <tr th:each="student:${students}">
+                <!--/*@thymesVar id="student" type="io.lker.bjj.models.Student"*/-->
+                <td th:text="${student.id}">101</td>
+                <td th:text="${student.name}">Bob Ross</td>
+                <td th:text="${student.yearsOfExperience}">500</td>
+                <td th:text="${student.beltRank}">20</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+</html>

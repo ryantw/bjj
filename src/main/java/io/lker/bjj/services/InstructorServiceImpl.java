@@ -22,7 +22,7 @@ public class InstructorServiceImpl implements InstructorService {
         Set<Instructor> instructors = new HashSet<>();
         instructorRepository.findAll().iterator().forEachRemaining(instructors::add);
 
-        return null;
+        return instructors;
     }
 
     @Override

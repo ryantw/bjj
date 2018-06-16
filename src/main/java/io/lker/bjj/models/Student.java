@@ -13,6 +13,9 @@ public class Student {
 
     private String name;
 
+    @Enumerated(value = EnumType.STRING)
+    private BeltRank beltRank;
+
     private int yearsOfExperience;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "student")
@@ -64,5 +67,13 @@ public class Student {
 
     public void setLessons(Lesson lesson) {
         this.lessons.add(lesson);
+    }
+
+    public BeltRank getBeltRank() {
+        return beltRank;
+    }
+
+    public void setBeltRank(BeltRank beltRank) {
+        this.beltRank = beltRank;
     }
 }
